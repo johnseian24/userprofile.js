@@ -1,0 +1,27 @@
+// Ask the user if they want to create a grocery list
+let createList = prompt("Would you like to create a grocery list? (y/n)").toLowerCase();
+
+if (createList === "y") {
+    // Ask for the number of items
+    let numItems = Number(prompt("Enter the number of items to register in the grocery list:"));
+    
+    // Initialize an empty grocery list array
+    let grocery_list = [];
+
+    // Collect grocery items from the user
+    for (let i = 0; i < numItems; i++) {
+        let item = prompt(Enter item ${i + 1}:);
+        grocery_list.push(item);
+    }
+
+    // Create sorted and reversed versions of the list
+    let groceryList_Sort = [...grocery_list].sort(); // Sorted safely
+    let groceryList_Reverse = [...grocery_list].reverse(); // Reversed safely
+
+    // Display the lists using alert()
+    alert(`Original List: ${grocery_list.join(", ")}
+Sorted List: ${groceryList_Sort.join(", ")}
+Reversed List: ${groceryList_Reverse.join(", ")}`);
+} else {
+    alert("You chose not to create a grocery list.");
+}
