@@ -1,0 +1,6 @@
+// Collect user information using prompt()
+let studentName = prompt("Enter your name:");
+let subjectTitle = prompt("Enter the subject title:");
+let classSchedule = prompt("Enter the class schedule (Time, Days):");
+let classroom = prompt("Enter the classroom:");
+let classInstructor = prompt("Enter the class instructor's 
