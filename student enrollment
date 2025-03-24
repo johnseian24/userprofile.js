@@ -1,0 +1,63 @@
+// Create two arrays for subjects
+let DSA = [];
+let WebDev = [];
+
+let subject;
+let continueProgram = true;
+
+while (continueProgram) {
+    // Ask the user to select a subject
+    let subjectChoice = prompt("Select a subject: (A) DSA, (B) WebDev").toUpperCase();
+
+    if (subjectChoice === "A") {
+        subject = DSA;
+    } else if (subjectChoice === "B") {
+        subject = WebDev;
+    } else {
+        alert("Invalid selection. Try again.");
+        continue;
+    }
+
+    let operation;
+    while (true) {
+        // Ask the user to select an operation
+        operation = prompt("Select an operation: (A) Enroll, (B) Unenroll, (C) Select Another Subject, (D) Exit").toUpperCase();
+
+        if (operation === "A") {
+            // Enroll a student
+            let studentName = prompt("Enter the student's name to enroll:");
+            subject.push(studentName);
+            alert(${studentName} has been enrolled.);
+        } 
+        else if (operation === "B") {
+            // Unenroll a student
+            if (subject.length === 0) {
+                alert("No students enrolled in this subject.");
+            } else {
+                alert("Current students: " + subject.join(", "));
+                let studentName = prompt("Enter the student's name to unenroll:");
+                let index = subject.indexOf(studentName);
+                
+                if (index !== -1) {
+                    subject.splice(index, 1);
+                    alert(${studentName} has been unenrolled.);
+                } else {
+                    alert("Student not found.");
+                }
+            }
+        } 
+        else if (operation === "C") {
+            // Select another subject
+            break;
+        } 
+        else if (operation === "D") {
+            // Exit and display students per subject
+            alert(DSA Students: ${DSA.join(", ")}\nWebDev Students: ${WebDev.join(", ")});
+            continueProgram = false;
+            break;
+        } 
+        else {
+            alert("Invalid operation. Try again.");
+        }
+    }
+}
