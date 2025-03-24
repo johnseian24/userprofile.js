@@ -1,0 +1,9 @@
+// Create an empty array to store favorite colors
+let favoriteColors = [];
+
+// Loop to collect three color inputs from the user
+for (let i = 0; i < 3; i++) {
+    let color = prompt(Enter color ${i + 1}:);
+    favoriteColors.push(color); // Add color to the array
+    console.log("Updated color list:", favoriteColors); // Print updated list
+}
